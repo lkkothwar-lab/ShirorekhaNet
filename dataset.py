@@ -26,12 +26,6 @@ class SanskritLineDataset(Dataset):
         # Ensure image and mask files match
         if len(self.image_filenames) != len(self.mask_filenames):
             raise ValueError("Number of images and masks do not match.")
-
-        # Optional: Verify corresponding filenames (e.g., img_001.png and mask_001.png)
-        # This assumes a consistent naming convention between image and mask files.
-        # If your filenames are not identical (e.g., 'image_1.png' vs 'mask_1.png'), you'll need
-        # a mapping logic here, e.g., by stripping prefixes/suffixes.
-        # For this example, we assume filenames are identical or can be mapped directly.
         for img_fn, mask_fn in zip(self.image_filenames, self.mask_filenames):
             if os.path.splitext(img_fn)[0] != os.path.splitext(mask_fn)[0]:
                 print(f"Warning: Image {img_fn} does not seem to match mask {mask_fn}")
