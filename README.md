@@ -15,11 +15,17 @@ The training strategy uses a **CosineLR‑PID‑Curriculum** that jointly schedu
 
 ## Repository structure
 ├── dataset.py # ShirorekhaDataset (4‑channel input)
+
 ├── model.py # ShirorekhaNet architecture
+
 ├── loss.py # SanskritLoss + CosineLR_PID_Curriculum
+
 ├── utils.py # Metrics and visualisation
+
 ├── train.py # Training script
+
 ├── README.md
+
 └── dataset/ # (place your data here)
 
 
