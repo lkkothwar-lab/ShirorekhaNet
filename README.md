@@ -206,8 +206,13 @@ The script automatically detects the latest checkpoint and resumes from it.
 
 Once you replace the old files with these, your repository will reflect the final proposed method. Let me know if you need any further adjustments.
 
+## Sample Visualization
+
+| Sample 1 with long inter word distance | Sample 2 with dense lines|
+|----------|--------------|---------------------------|
+| ![Sample 1 with long inter word distance](visual_long.jpg) | ![Sample 2 with dense lines](visual_dense.jpg) |
+
 ### Install dependencies
 ```bash
 pip install torch torchvision opencv-python numpy matplotlib tqdm
-
 
