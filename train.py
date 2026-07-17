@@ -46,7 +46,7 @@ def main():
     TRAIN_MASK_DIR = os.path.join(BASE_PATH, "train_data/Trn_lmask")
     VAL_IMG_DIR   = os.path.join(BASE_PATH, "val_data/Vld_img")
     VAL_MASK_DIR  = os.path.join(BASE_PATH, "val_data/Vld_lmask")
-    OUTPUT_DIR    = os.path.join(BASE_PATH, 'benchmark_output_v5')
+    OUTPUT_DIR    = os.path.join(BASE_PATH, 'output')
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     IMG_SIZE = 512
