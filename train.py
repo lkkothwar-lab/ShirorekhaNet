@@ -41,7 +41,7 @@ def validate(model, loader, device):
 
 def main():
     # --- Configuration (modify paths as needed) ---
-    BASE_PATH = "/content/drive/MyDrive/Colab Notebooks/ShirorekhaNet/SOTA/"
+    BASE_PATH = "/content/drive/MyDrive/ShirorekhaNet"   ##### Adjust as per your requirement
     TRAIN_IMG_DIR = os.path.join(BASE_PATH, "train_data/Trn_img")
     TRAIN_MASK_DIR = os.path.join(BASE_PATH, "train_data/Trn_lmask")
     VAL_IMG_DIR   = os.path.join(BASE_PATH, "val_data/Vld_img")
