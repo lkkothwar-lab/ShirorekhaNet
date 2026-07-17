@@ -1,7 +1,27 @@
-# ShirorekhaNet: A Multi-Scale Attention Network for Text Line-Level Segmentation of Sanskrit Manuscripts
+# ShirorekhaNet: Multi‑Scale Attention Network with Cosine‑LR PID Curriculum
+
+This repository contains the final implementation of **ShirorekhaNet** for text‑line‑level segmentation of Sanskrit manuscripts.  
+The training strategy uses a **CosineLR‑PID‑Curriculum** that jointly schedules the learning rate and dynamically balances Dice, BCE, and perceptual loss weights.
+
+## New in this version
+
+- **ShirorekhaNet** architecture: U‑Net style encoder‑decoder with `MultiScaleInception` blocks and channel attention.
+- **CosineLR‑PID‑Curriculum**: Simultaneous cosine learning‑rate decay and PID‑controlled loss‑weight adjustment.
+- **Simplified data pipeline**: Inputs are 4‑channel (RGB + adaptive‑thresholded binary image). No external augmentation library required.
+- **Comprehensive metrics**: IoU, Dice, F1, precision, recall, detection rate, and custom Shirorekha accuracy.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19152726.svg)](https://doi.org/10.5281/zenodo.19152726)
+
+## Repository structure
+├── dataset.py # ShirorekhaDataset (4‑channel input)
+├── model.py # ShirorekhaNet architecture
+├── loss.py # SanskritLoss + CosineLR_PID_Curriculum
+├── utils.py # Metrics and visualisation
+├── train.py # Training script
+├── README.md
+└── dataset/ # (place your data here)
+
 
 ## Dataset: Shirorekha Annotations for Devanagari Manuscripts (125 Folios)
 
@@ -160,20 +180,28 @@ To maintain consistency, the original images from the PE-OCR source were renamed
 
 </details>
 
-## Repository Structure
-The codebase is organized into modular Python scripts for readability and integration:
+# Prepare your dataset
+Organise your images and binary masks into train_data/Trn_img, train_data/Trn_lmask, val_data/Vld_img, val_data/Vld_lmask (see train.py for paths).
 
-* `dataset.py`: Contains the `SanskritLineDataset` class and Albumentations augmentations.
-* `model.py`: Defines the `ShirorekhaNet` architecture, including the `DevanagariInception` and `ChannelAttention` modules.
-* `loss.py`: Houses the custom `SanskritLoss` function and the `HyperAggressiveAdaptiveMetaTuner` (PID controller).
-* `utils.py`: Includes metric calculations (IoU, Shirorekha accuracy), the `ModelSaver`, and the `Visualizer`.
-* `train.py`: The main execution script to initialize the dataset, model, and begin the training loop.
-* `/dataset`: Directory for the training, validation, and test data (not tracked by Git).
-* `/checkpoints`: Directory where model weights are saved during training.
+# Train the model
+python train.py
+By default, the script will save checkpoints, logs, and epoch visualisations inside output/.
 
-## Getting Started
+# Resume training
+The script automatically detects the latest checkpoint and resumes from it.
 
-### 1. Prerequisites
-Ensure you have Python 3.8+ installed. Install the required dependencies:
+
+---
+
+**Note:**  
+- In `train.py`, you need to adjust `BASE_PATH` and folder names to match your local setup.  
+- The script expects the data already unzipped; you can add the unzip step from the Colab if you prefer.  
+- All files are self‑contained and match the behaviour of your latest Colab implementation.  
+
+Once you replace the old files with these, your repository will reflect the final proposed method. Let me know if you need any further adjustments.
+
+### Install dependencies
 ```bash
-pip install torch torchvision opencv-python numpy albumentations matplotlib scikit-learn tqdm
+pip install torch torchvision opencv-python numpy matplotlib tqdm
+
+
