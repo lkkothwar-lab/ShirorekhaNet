@@ -214,12 +214,13 @@ Once you replace the old files with these, your repository will reflect the fina
     <td align="center"><b>Dense Text</b></td>
   </tr>
   <tr>
-    <td><img src="visuals/visual_long.png" alt="Long lines" width="100%"></td>
-    <td><img src="visuals/visual_dense.png" alt="Dense text" width="100%"></td>
+    <td><img src="visuals/visual_long.png" alt="Long inter-word gap sample" width="100%"></td>
+    <td><img src="visuals/visual_dense.png" alt="Dense line sample" width="100%"></td>
   </tr>
   <tr>
-    <td align="center"><i>Original, ground truth, and prediction for a folio with long Shirorekha lines.</i></td>
-    <td align="center"><i>Original, ground truth, and prediction for a densely written folio.</i></td>
+    <td align="center"><i>Prediction by ShirorekhaNet, succeed in bridging these gaps
+and produce a clean, unbrokenline.</i></td>
+    <td align="center"><i>Prediction by ShirorekhaNet, separate all lines correctly.</i></td>
   </tr>
 </table>
 
