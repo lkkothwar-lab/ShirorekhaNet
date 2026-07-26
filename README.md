@@ -211,7 +211,7 @@ Once you replace the old files with these, your repository will reflect the fina
 <table>
   <tr>
     <td align="center"><b>Long inter-word gap sample</b></td>
-    <td align="center"><b>Dense line samplet</b></td>
+    <td align="center"><b>Dense line sample</b></td>
   </tr>
   <tr>
     <td><img src="visuals/visual_long.png" alt="Long inter-word gap sample" width="100%"></td>
