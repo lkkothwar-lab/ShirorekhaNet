@@ -206,6 +206,23 @@ The script automatically detects the latest checkpoint and resumes from it.
 
 Once you replace the old files with these, your repository will reflect the final proposed method. Let me know if you need any further adjustments.
 
+## Output Visualization
+
+<table>
+  <tr>
+    <td align="center"><b>Long Lines</b></td>
+    <td align="center"><b>Dense Text</b></td>
+  </tr>
+  <tr>
+    <td><img src="visuals/visual_long.png" alt="Long lines" width="100%"></td>
+    <td><img src="visuals/visual_dense.png" alt="Dense text" width="100%"></td>
+  </tr>
+  <tr>
+    <td align="center"><i>Original, ground truth, and prediction for a folio with long Shirorekha lines.</i></td>
+    <td align="center"><i>Original, ground truth, and prediction for a densely written folio.</i></td>
+  </tr>
+</table>
+
 ### Install dependencies
 ```bash
 pip install torch torchvision opencv-python numpy matplotlib tqdm
